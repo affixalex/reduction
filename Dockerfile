@@ -1,4 +1,5 @@
-FROM alpine:3.7
+FROM alpine:3.6
+# Switch to Alpine 3.7 and it breaks!
 
 WORKDIR /code
 
@@ -11,7 +12,7 @@ ENV NPM_CONFIG_LOGLEVEL verbose
 ADD package*.json ./
 
 # Try to install everything (and clean up afterwards)
-RUN apk update && apk add nodejs && \
+RUN apk update && apk add nodejs nodejs-npm && \
     apk add --no-cache --virtual .build \
     autoconf \
     automake \
