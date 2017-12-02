@@ -1,12 +1,9 @@
-FROM alpine:3.6
-# Switch to Alpine 3.7 and it breaks!
+FROM televidence/alpine-base:latest
 
 WORKDIR /code
 
 # Be verbose.
 ENV NPM_CONFIG_LOGLEVEL verbose
-#ENV CC=clang
-#ENV CXX=clang++
 
 # Add NPM package config
 ADD package*.json ./
@@ -14,11 +11,12 @@ ADD package*.json ./
 # Try to install everything (and clean up afterwards)
 RUN apk update && apk add nodejs nodejs-npm && \
     apk add --no-cache --virtual .build \
-    autoconf \
-    automake \
+    cmake \
     alpine-sdk \
+    libpng \
     libpng-dev \
-    libtool \
+    libjpeg-turbo \
+    libjpeg-turbo-dev \
     make \
     python \
     nasm \

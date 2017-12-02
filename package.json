@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cwebp-bin": "^3.2.0"
+    "cwebp-bin": "git+https://github.com/hypoalex/cwebp-bin.git"
   }
 }
