@@ -22,10 +22,10 @@ RUN apk update && apk add nodejs && \
     python \
     nasm \
     git \
-		make \
+    make \
     wget \
-		zip \
-		bash && \
+    zip \
+    bash && \
   npm install && \
   apk del .build
 
